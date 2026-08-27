@@ -8,6 +8,7 @@ package prueba6_programacion2;
  *
  * @author denam
  */
+import javax.swing.*;
 public class Prueba6_Programacion2 {
 
     /**
@@ -15,6 +16,7 @@ public class Prueba6_Programacion2 {
      */
     public static void main(String[] args) {
         // TODO code application logic here
+        SwingUtilities.invokeLater(() -> { new GUIarchivos().setVisible(true); });
     }
     
 }
