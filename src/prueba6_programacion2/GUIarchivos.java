@@ -84,9 +84,9 @@ public class GUIarchivos extends JFrame{
             
               error = new JLabel("");
               error.setFont(new Font("BOLD", Font.BOLD, 9));
-             error.setMaximumSize(new Dimension (75, 30));
-             error.setMinimumSize(new Dimension (75, 30));
-             error.setPreferredSize(new Dimension (75, 30));
+             error.setMaximumSize(new Dimension (150, 30));
+             error.setMinimumSize(new Dimension (150, 30));
+             error.setPreferredSize(new Dimension (150, 30));
              error.setBackground(Color.black);
              error.setForeground(Color.red);
             gbc.gridx = 2;
@@ -163,13 +163,13 @@ public class GUIarchivos extends JFrame{
         contarArchivosPorExtension(directorioRaiz);
         buscarArchivosPorNombre(directorioRaiz, texto);
 
-        Resumen.append("Testos: " + contTxt + " archivos");
+        Resumen.append("Testos: " + contTxt + " archivos\n");
         Resumen.append("");
-        Resumen.append("Java: " + contJava + " archivos");
+        Resumen.append("Java: " + contJava + " archivos\n");
         Resumen.append("");
-        Resumen.append("PDF: " + contPdf + " archivos");
+        Resumen.append("PDF: " + contPdf + " archivos\n");
         Resumen.append("");
-        Resumen.append("otro: " + contOtros + " archivos");
+        Resumen.append("otro: " + contOtros + " archivos\n");
 
         if (modeloLista.isEmpty()) {
             modeloLista.addElement("No se encontraron archivos que coincidan con la busqueda");
