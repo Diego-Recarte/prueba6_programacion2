@@ -161,7 +161,7 @@ public class GUIarchivos extends JFrame{
         Resumen.setText("");
 
         contarArchivosPorExtension(directorioRaiz);
-        
+        buscarArchivosPorNombre(directorioRaiz, texto);
 
         Resumen.append("Testos: " + contTxt + " archivos");
         Resumen.append("");
@@ -175,7 +175,8 @@ public class GUIarchivos extends JFrame{
             modeloLista.addElement("No se encontraron archivos que coincidan con la busqueda");
         }
     }
-     private void contarArchivosPorExtension(File directorio) {
+     
+    private void contarArchivosPorExtension(File directorio) {
         File[] archivo = directorio.listFiles();
 
         if (archivo == null) {
@@ -200,6 +201,35 @@ public class GUIarchivos extends JFrame{
             }
         }
     }
+     
+    private void buscarArchivosPorNombre(File directorio, String textoBusqueda) {
+        File[] archivo = directorio.listFiles();
+
+        if (archivo == null) {
+            return;
+        }
+
+        for (File a : archivo) {
+            if (a.isDirectory()) {
+                buscarArchivosPorNombre(a, textoBusqueda);
+            } else {
+                String nombreArchivo = a.getName().toLowerCase();
+
+                if (nombreArchivo.contains(textoBusqueda)) {
+                    modeloLista.addElement(a.getPath());
+                }
+            }
+        }
+    }
+    
+    
+    
+      
+      
+      
+      
+      
+      
 
     
      
